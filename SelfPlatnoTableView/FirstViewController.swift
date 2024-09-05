@@ -58,8 +58,8 @@ class FirstViewController: UIViewController,UITableViewDelegate, UITableViewData
     }
     func conctrTable(){
         myTableView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.top.equalToSuperview().insert(40)
+            $0.bottom.equalToSuperview().insert(20)
         }
     }
     //Methods DataSours-для  входных данных
@@ -70,7 +70,7 @@ class FirstViewController: UIViewController,UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.backgroundColor = .white
-        
+        cell.addSubview(imageOfPlace)
         return cell
     }
     
