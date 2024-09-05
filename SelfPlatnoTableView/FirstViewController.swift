@@ -10,28 +10,28 @@ import SnapKit
 
 class FirstViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-//    private lazy   var imageOfPlace: UIImageView = {
-//       
-//           let image = UIImageView()
-//           image.image = UIImage(named: "фото")
-//           image.contentMode = .scaleToFill
-//           image.translatesAutoresizingMaskIntoConstraints = false
-//           image.heightAnchor.constraint(equalToConstant: view.frame.height/4).isActive = true
-//           image.widthAnchor.constraint(equalToConstant: view.frame.height/4).isActive = true
-//           return image
-//       }()
+    //    private lazy   var imageOfPlace: UIImageView = {
+    //
+    //          let image = UIImageView()
+    //          image.image = UIImage(named: "фото")
+    //          image.contentMode = .scaleToFill
+    //          image.translatesAutoresizingMaskIntoConstraints = false
+    //          image.heightAnchor.constraint(equalToConstant: view.frame.height/4).isActive = true
+    //          image.widthAnchor.constraint(equalToConstant: view.frame.height/4).isActive = true
+    //          return image
+    //      }()
     
     
     var myTableView = UITableView()
-   
+    
     let places = Place.restauratnNames
     
     
     //там же создать идентификатор
-   let indentifir = "myCell"
-
-
-
+    let indentifir = "myCell"
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +44,18 @@ class FirstViewController: UIViewController,UITableViewDelegate, UITableViewData
     
     //method for create tableView
     func createTable(){
-            self.myTableView = UITableView(frame: view.bounds, style:.plain)
-           
-            myTableView.register(UITableViewCell.self, forCellReuseIdentifier: indentifir)
-            myTableView.backgroundColor = .yellow
-            // растягивает нашу вью по всей площади главного вью
-           myTableView.translatesAutoresizingMaskIntoConstraints = false
-            //
+        self.myTableView = UITableView(frame: view.bounds, style:.plain)
+        
+        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: indentifir)
+        myTableView.backgroundColor = .yellow
+        // растягивает нашу вью по всей площади главного вью
+        myTableView.translatesAutoresizingMaskIntoConstraints = false
+        //
         //conctrTable()
-            view.addSubview(myTableView)
-             
-       
-        }
+        view.addSubview(myTableView)
+        
+        
+    }
     func conctrTable(){
         myTableView.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -64,16 +64,19 @@ class FirstViewController: UIViewController,UITableViewDelegate, UITableViewData
     }
     //Methods DataSours-для  входных данных
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return places.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           <#code#>
-       }
-
+        let cell = UITableViewCell()
+        cell.backgroundColor = .white
+        
+        return cell
+    }
     
-
+    
 }
+
 //extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        <#code#>
